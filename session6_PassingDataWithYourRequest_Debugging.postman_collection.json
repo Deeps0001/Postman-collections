@@ -1,0 +1,95 @@
+{
+  "info": {
+    "_postman_id": "6b5d2554-7133-4b08-bef4-5b89fbe46c72",
+    "name": "session6_PassingDataWithYourRequest_Debugging",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "35576578"
+  },
+  "item": [
+    {
+      "name": "Get Request",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "x-api-key",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "{{apiKey}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://httpbin.org/get?name=sakshi&age=24&email=sakshi@gmail",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "get"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "sakshi"
+            },
+            {
+              "key": "age",
+              "value": "24"
+            },
+            {
+              "key": "email",
+              "value": "sakshi@gmail"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://httpbin.org/status/:status?name=sakshi",
+          "protocol": "https",
+          "host": [
+            "httpbin",
+            "org"
+          ],
+          "path": [
+            "status",
+            ":status"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "sakshi"
+            }
+          ],
+          "variable": [
+            {
+              "key": "status",
+              "value": "200"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "info": {
+    "_postman_id": "c762996b-bb17-4fc4-9e9d-c64277e7337a",
+    "name": "session11_PracticeMockserver",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "35576578"
+  },
+  "item": [
+    {
+      "name": "Get Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{MOCKurl}}/Get",
+          "host": [
+            "{{MOCKurl}}"
+          ],
+          "path": [
+            "Get"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Postreq",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{MOCKurl}}/Post",
+          "host": [
+            "{{MOCKurl}}"
+          ],
+          "path": [
+            "Post"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetJsonData",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{MOCKurl}}/GetInJson",
+          "host": [
+            "{{MOCKurl}}"
+          ],
+          "path": [
+            "GetInJson"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get user id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{MOCKurl}}/users?id=1",
+          "host": [
+            "{{MOCKurl}}"
+          ],
+          "path": [
+            "users"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

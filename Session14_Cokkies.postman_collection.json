@@ -1,0 +1,81 @@
+{
+  "info": {
+    "_postman_id": "7c1f2647-c729-407e-9736-f6214afcd52a",
+    "name": "Session14_Cokkies",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "35576578"
+  },
+  "item": [
+    {
+      "name": "Get Cookies",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"check_cookies\", function() {\n    pm.expect(pm.cookies.has(\"Cookie_1\")).to.be.true;\n});\npm.test(\"check_cookiesvalue\", function() {\npm.expect(pm.cookies.get(\"Cookie_1\")).to.eql(\"abc\");\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "username",
+              "value": "postman",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "password",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://postman-echo.com/basic-auth",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "basic-auth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cookies2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://www.google.com",
+          "protocol": "https",
+          "host": [
+            "www",
+            "google",
+            "com"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

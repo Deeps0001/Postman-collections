@@ -1,0 +1,130 @@
+{
+  "info": {
+    "_postman_id": "9417fb5d-1df5-464a-b791-d64930b3fd84",
+    "name": "Session8_DynamicVariables-Examples",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "35576578"
+  },
+  "item": [
+    {
+      "name": "Post request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+              "});\r",
+              "pm.test(\"Status code name has string\", function () {\r",
+              "    pm.response.to.have.status(\"Created\");\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"{{$randomFirstName}}\",\r\n  \"job\": \"{{$randomJobTitle}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://reqres.in/api/users",
+          "protocol": "https",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Request (How to use snippets in scripts)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Body matches page, total, total_pages\", function () {",
+              "    pm.expect(pm.response.text()).to.include(\"page\");",
+              "    pm.expect(pm.response.text()).to.include(\"total\");",
+              "    pm.expect(pm.response.text()).to.include(\"total_pages\");",
+              "});",
+              "pm.test(\"total_pages\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.total_pages).to.eql(2);",
+              "});",
+              "pm.test(\"Content-Type is present\", function () {",
+              "    pm.response.to.have.header(\"Content-Type\");",
+              "});",
+              "pm.test(\"Response time is less than 5000ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+              "});",
+              "pm.test(\"Successful GET request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200]);",
+              "});",
+              "pm.test(\"Expected George as firstname at data[0] \", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.data[0].first_name).to.eql('George');",
+              "});",
+              "pm.test(\"Status code name is OK\", function () {",
+              "    pm.response.to.have.status(\"OK\");",
+              "});",
+              "pm.globals.set(\"GlobalURL\", \"https://reqres.in\");",
+              "console.log(pm.globals.get(\"GlobalURL\"));",
+              "",
+              "pm.environment.set(\"url1\", \"https://reqres.in\");",
+              "console.log(pm.environment.get(\"url1\"));",
+              "",
+              "pm.variables.set(\"url2\", \"https://reqres.in\");",
+              "(console.log(pm.variables.get(\"url2\")));",
+              "",
+              "pm.globals.unset(\"null\");",
+              "(pm.globals.set(\"userId\",\"value\"));",
+              "(console.log(pm.globals.get(\"userId\")));",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://reqres.in/api/users",
+          "protocol": "https",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

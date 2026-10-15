@@ -1,0 +1,41 @@
+{
+  "info": {
+    "_postman_id": "7a421089-7e01-4d11-a78c-725893891c80",
+    "name": "session13_Authorization_ApiKey&OAuth",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "35576578"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "apikey"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.openweathermap.org/data/2.5/weather?q=Delhi",
+          "protocol": "https",
+          "host": [
+            "api",
+            "openweathermap",
+            "org"
+          ],
+          "path": [
+            "data",
+            "2.5",
+            "weather"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "Delhi"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
